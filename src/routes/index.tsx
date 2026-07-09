@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-halwa-puri.jpg";
 import chaiImg from "@/assets/chai.jpg";
-import samosaImg from "@/assets/samosa.jpg";
+import samosaAsset from "@/assets/samosa.webp.asset.json";
+const samosaImg = samosaAsset.url;
 import halwaImg from "@/assets/halwa.jpg";
 import { MapPin, Phone, Clock, Star, Utensils, ShoppingBag, ExternalLink } from "lucide-react";
 
