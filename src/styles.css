@@ -24,43 +24,40 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --color-spice: var(--spice);
-  --color-saffron: var(--saffron);
-  --color-cream: var(--cream);
-  --color-ink: var(--ink);
+  --color-navy: var(--navy);
+  --color-crimson: var(--crimson);
+  --color-mist: var(--mist);
 
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-urdu: "Noto Nastaliq Urdu", serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  /* Warm desi breakfast palette */
-  --background: oklch(0.97 0.02 75);        /* warm cream */
-  --foreground: oklch(0.22 0.04 40);        /* deep ink brown */
-  --card: oklch(0.99 0.015 80);
-  --card-foreground: oklch(0.22 0.04 40);
-  --primary: oklch(0.48 0.17 30);           /* deep terracotta */
-  --primary-foreground: oklch(0.98 0.02 80);
-  --secondary: oklch(0.93 0.05 75);
-  --secondary-foreground: oklch(0.28 0.06 40);
-  --muted: oklch(0.94 0.03 75);
-  --muted-foreground: oklch(0.45 0.04 45);
-  --accent: oklch(0.72 0.18 55);            /* saffron */
-  --accent-foreground: oklch(0.22 0.04 40);
-  --border: oklch(0.88 0.03 70);
-  --ring: oklch(0.48 0.17 30);
+  --radius: 0.75rem;
+  /* Clinic palette — navy + crimson from the DS logo */
+  --background: oklch(0.99 0.005 250);
+  --foreground: oklch(0.20 0.05 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.05 265);
+  --primary: oklch(0.32 0.14 268);          /* navy */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.015 250);
+  --secondary-foreground: oklch(0.25 0.08 268);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.48 0.03 260);
+  --accent: oklch(0.55 0.22 22);            /* crimson red */
+  --accent-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 250);
+  --ring: oklch(0.32 0.14 268);
 
-  --spice: oklch(0.48 0.17 30);
-  --saffron: oklch(0.78 0.16 65);
-  --cream: oklch(0.97 0.02 75);
-  --ink: oklch(0.22 0.04 40);
+  --navy: oklch(0.32 0.14 268);
+  --crimson: oklch(0.55 0.22 22);
+  --mist: oklch(0.97 0.012 250);
 
-  --gradient-warm: linear-gradient(135deg, oklch(0.48 0.17 30), oklch(0.65 0.18 45));
-  --gradient-hero: linear-gradient(180deg, oklch(0.15 0.03 40 / 0.15) 0%, oklch(0.15 0.03 40 / 0.75) 100%);
-  --shadow-warm: 0 20px 50px -20px oklch(0.35 0.15 30 / 0.35);
-  --shadow-soft: 0 8px 30px -12px oklch(0.35 0.15 30 / 0.2);
+  --gradient-brand: linear-gradient(135deg, oklch(0.32 0.14 268), oklch(0.55 0.22 22));
+  --gradient-hero: linear-gradient(120deg, oklch(0.28 0.14 268 / 0.92) 0%, oklch(0.35 0.16 268 / 0.75) 55%, oklch(0.50 0.20 22 / 0.55) 100%);
+  --shadow-elegant: 0 20px 50px -20px oklch(0.32 0.14 268 / 0.35);
+  --shadow-soft: 0 8px 30px -12px oklch(0.32 0.14 268 / 0.18);
 }
 
 @layer base {
@@ -69,11 +66,9 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-feature-settings: "ss01", "cv11";
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
-  .font-urdu { font-family: var(--font-urdu); }
 }
