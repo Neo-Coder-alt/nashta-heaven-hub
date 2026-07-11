@@ -48,22 +48,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Something went wrong on our end. Please try again.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
+            onClick={() => { router.invalidate(); reset(); }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Try again
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
+          <a href="/" className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent">
             Go home
           </a>
         </div>
@@ -72,29 +66,30 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const TITLE = "Dr. Saeed Dental, Implant, Aesthetic & Physiotherapy Clinic — Nazimabad, Karachi";
+const DESC = "Dr. Saeed Clinic in Nazimabad, Karachi — dental implants, orthodontics, cosmetic aesthetics, and physiotherapy under one roof. Rated 4.8. Book your appointment: 0343 8234969.";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "New Master Nashta House — Halwa Puri in Nazimabad, Karachi" },
-      { name: "description", content: "Authentic halwa puri, chana, aloo tarkari, samosas and chai at New Master Nashta House, Block 2 Nazimabad, Karachi. Dine-in, takeout, and delivery." },
-      { name: "author", content: "New Master Nashta House" },
-      { property: "og:title", content: "New Master Nashta House — Halwa Puri in Nazimabad, Karachi" },
-      { property: "og:description", content: "Authentic halwa puri, chana, aloo tarkari, samosas and chai at New Master Nashta House, Block 2 Nazimabad, Karachi. Dine-in, takeout, and delivery." },
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { name: "theme-color", content: "#1e2a78" },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "New Master Nashta House" },
+      { property: "og:site_name", content: "Dr. Saeed Clinic" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "New Master Nashta House — Halwa Puri in Nazimabad, Karachi" },
-      { name: "twitter:description", content: "Authentic halwa puri, chana, aloo tarkari, samosas and chai at New Master Nashta House, Block 2 Nazimabad, Karachi. Dine-in, takeout, and delivery." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3e5c5fbf-6d04-495e-a326-b6cbeeb05b05/id-preview-ccea06da--5507de09-3f85-4bc2-ad0f-fa88083ce57b.lovable.app-1783601036611.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3e5c5fbf-6d04-495e-a326-b6cbeeb05b05/id-preview-ccea06da--5507de09-3f85-4bc2-ad0f-fa88083ce57b.lovable.app-1783601036611.png" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
     scripts: [
@@ -102,20 +97,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Restaurant",
-          name: "New Master Nashta House",
+          "@type": "MedicalClinic",
+          name: "Dr. Saeed Dental, Implant, Aesthetic & Physiotherapy Clinic",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Plot 1, Block 2 Nazimabad",
+            streetAddress: "3 B 2, 1A Nazimabad Rd Number 3, Block 3 Nazimabad",
             addressLocality: "Karachi",
             postalCode: "74600",
             addressCountry: "PK",
           },
-          telephone: "+923462392049",
-          servesCuisine: ["Pakistani", "Breakfast", "Desi"],
-          priceRange: "Rs 1–1,000",
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.4", reviewCount: "60" },
-          openingHours: "Mo-Su 06:00-20:00",
+          telephone: "+923438234969",
+          priceRange: "$$",
+          medicalSpecialty: ["Dentistry", "CosmeticProcedure", "PhysicalTherapy"],
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", reviewCount: "45" },
+          openingHours: "Mo-Su 10:00-22:00",
         }),
       },
     ],
@@ -142,10 +137,8 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
